@@ -1,2 +1,2 @@
 # Data-and-Design-Midterm-Project
-Radiohead's touring patterns
+A brief description of my project...
