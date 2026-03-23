@@ -1,2 +1,24 @@
 # Data-and-Design-Midterm-Project
-A brief description of my project...
+This project looks into the touring history of one of my favorite bands, Radiohead. It examines the cities they’ve played, the songs they’ve played most live and the specific year in which they broke out. The dataset used in this project was collected using the Setlist.fm API, which provides structured data on live concert performances and setlists for a wide variety of artists. The setlist.fm database is a crowd-sourced platform where users contribute concert setlists, making it a valuable resource for analyzing live performance trends across artists and time.
+
+The API returns information like event dates, venues, cities, countries, and the songs performed at each concert. Using Python’s requests library, multiple pages of the API were used to gather data on Radiohead's performance history over time.
+
+I began by identifying the central question: how did Radiohead’s touring patterns evolve over time, and what does this reveal about their rise to global popularity? This question serves as the foundation for the entire project and is explored through multiple complementary analyses.
+
+To answer this, I broke the main question into several smaller, specific questions. These include: how the number of shows performed per year has changed over time, which cities and regions the band has played most frequently, and which songs appear most often in their live performances. Additionally, I examine whether there are clear periods of increased touring activity that may indicate key moments in the band’s growth and commercial success.
+
+Each visualization and dataset in this project is designed to address one of these sub questions, in order to contribute to the broader understanding of how Radiohead’s live performance strategy developed throughout their career.
+
+The raw data required multiple steps in order to ensure co consistency and accuracy for analysis. One of my main problems was dealing with duplicate entries for concerts. In some cases, the dataset had repeated records for the same concert so duplicates were dropped based on combinations of date and venue to ensure that each performance was only counted once. This step was particularly important when calculating the number of shows per year, as failing to remove duplicates could lead to inflated counts.
+
+One of the first steps was to convert the date field into a standard datetime format using pandas.to_datetime. This allowed for easier extraction of time based features such as year, something very important for this project and for the determinant of growth. A new column representing the year of each performance was created in order to facilitate time series analysis. 
+
+The main aspect of this project was analyzing how Radiohead’s touring activity changed over time. I was able to create a timeline of this by grouping the dataset by year and counting the number of performances. This revealed clear peaks in activity, especially during the mid to late 1990’s. Specifically the years 1995 and 1997 showed an increase in show activity which aligns with major points of the band’s career. These spikes suggest heavy periods of touring, associated with album releases and popularity growth.
+
+Another important part of the analysis was understanding how Radiohed’s performances expanded geographically. By examining the number of countries they performed in each year, along with mapping their concert locations, a clear pattern of global expansion emerges. Performances were concentrated in a smaller number of countries earlier in their career, but we can see the gradual expansion over time. 
+
+This geographic growth aligns closely with their broader breakout period. Their earliest performances date back to the mid-1980s, while their first appearances at larger venues occurred several years later.  This suggests that it took approximately six years for the band to transition from smaller venues to larger, more prominent ones. By the mid-1990s, both the scale of venues and the global reach of their performances increased significantly, marking a key turning point in their rise to popularity.
+
+Finally, I analyzed the number of songs they performed at each show to better understand how their live performances evolved. By calculating the average number of songs per show over time, I observed that setlists became more consistent as the band’s career progressed. But also that the band’s show got longer overtime, a clear indication that they were the headlining act. 
+
+This analysis shows that Radiohead’s rise to global popularity was gradual but clearly reflected in their touring patterns. Over time the band increased both the number of shows they performed and the geographic range of their tours. The mid-1990’s stand out as a key turning point where increased touring activity, larger venues and global expansion all occurred simultaneously. Overall the data suggests that their growth as a live act played a significant role in establishing them as an internationally recognized band.
